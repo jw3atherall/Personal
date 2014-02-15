@@ -12,6 +12,6 @@ global class HelloWorld2 {
 	// and are flagged with the testMethod keyword
 	// in the definition.
 	static testMethod void testHelloWorld() {
-		System.assertEquals('Hello to you!', sayHelloWorld('to you!'));
+		System.assertEquals('Hello to you!', sayHelloWorld('there!'));
 	}
 }
