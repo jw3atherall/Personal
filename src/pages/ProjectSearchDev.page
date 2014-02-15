@@ -1,0 +1,21 @@
+<apex:page controller="projectSearchController" >
+<form name="searchForm" method="post" action="#" >
+Project Name:<input type="text" name="name" size="10" id="input1" />
+Address:<input type="text" name="address" size="10" id="input2" />
+<input type="submit" class="button" value="Search" name="aid" />
+</form>   
+<apex:pageBlock title="Project Search">  
+        <apex:form>      
+                <br/><b>Project Name: </b><apex:inputText value="{!Name}"></apex:inputText>
+                <br/><b>Address: </b><apex:inputText value="{!Site_Address_1}"></apex:inputText>
+                <br><apex:commandButton action="{!ProjectSearch}" value="Search"/></br>
+        </apex:form>
+        <apex:pageBlockSection title="Search results">
+                <apex:dataTable value="{!projects}" var="p">
+                        <apex:column>
+                                {!p.name}
+                        </apex:column>
+                </apex:dataTable>
+        </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

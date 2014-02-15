@@ -1,0 +1,10 @@
+<apex:page controller="AsanaAPIController">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:image style="padding:25px 50px 75px 100px;" url="{!aUser.Photo}"/> 
+  <apex:outputText style="font-size: 20px" value="{!aUser.Name}"/> <br/>
+  (<apex:outputLink value="mailto: {!aUser.Email}">{!aUser.Email}</apex:outputLink>)<br/>
+  <apex:dataList value="{!wSpaces}" var="ws">
+      <apex:outputText value="{!ws.Name}"/>
+  </apex:dataList>
+
+</apex:page>

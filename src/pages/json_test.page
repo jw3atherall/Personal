@@ -1,0 +1,3 @@
+<apex:page contentType="text/html" showHeader="false" controller="Json_Controller" >
+    <apex:outputText value="{!json}" />
+</apex:page>

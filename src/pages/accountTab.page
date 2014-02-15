@@ -1,0 +1,52 @@
+<apex:page controller="recordTypeHomeTab" tabStyle="Account" >
+
+<apex:sectionHeader title="Supplier Record Type" subtitle="Home" ></apex:sectionHeader>
+
+<apex:pageBlock >
+
+<apex:facet name="header" >
+<apex:form ><apex:panelGrid styleClass="list" columnClasses="pbTitle,pbButton,pbHelp" columns="3" border="0" cellpadding="0" cellspacing="0" >
+
+<apex:outputLabel ><h3>Recent Items</h3></apex:outputLabel>
+
+<apex:commandButton value=" New " styleClass="btn" action="{!newRt}" ></apex:commandButton>
+
+<apex:selectList id="recent" size="1" >
+<apex:actionSupport event="onchange" action="{!changeRt}" reRender="recentmodify"></apex:actionSupport>
+<apex:selectOption itemLabel="Recently Modified" itemValue="mod"></apex:selectOption>
+<apex:selectOption itemLabel="Recently Created" itemValue="cre"></apex:selectOption>
+</apex:selectList>
+
+</apex:panelGrid></apex:form>
+</apex:facet>
+
+<!-- main record type data table -->
+<apex:actionStatus >
+<apex:facet name="start"><h1>Requesting...</h1></apex:facet>
+<apex:facet name="stop">
+<apex:dataTable id="recentmodify" value="{!accounts}" var="a" bgcolor="#F3F3EC"
+styleClass="list" rowClasses="dataRow" onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">
+
+<apex:column >
+<apex:facet name="header" ><b>Name</b></apex:facet>
+<apex:outputLink value="/{!a.id}" >
+{!a.name}
+</apex:outputLink>
+</apex:column>
+<apex:column >
+<apex:facet name="header"><b>Billing City</b></apex:facet>
+{!a.billingcity}
+</apex:column>
+<apex:column >
+<apex:facet name="header"><b>Phone</b></apex:facet>
+{!a.Phone}
+</apex:column>
+<apex:column >
+<apex:facet name="header"><b>Record Type</b></apex:facet>{!a.RecordType.Name}
+</apex:column>
+</apex:dataTable>
+</apex:facet></apex:actionStatus>
+
+</apex:pageBlock>
+
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page title="Test" standardController="Account" showHeader="true" tabStyle="account" >
+    <apex:sectionHeader title="Supplier Record Type" subtitle="Home" ></apex:sectionHeader>
+   <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+      <apex:tab label="Details" name="AccDetails" id="tabdetails">
+         <apex:detail relatedList="false" title="true"/>
+      </apex:tab>
+      <apex:tab label="Contacts" name="Contacts" id="tabContact">
+         <apex:relatedList subject="{!account}" list="contacts" />
+      </apex:tab>
+      <apex:tab label="Opportunities" name="Opportunities" id="tabOpp">
+         <apex:relatedList subject="{!account}" list="opportunities" />
+      </apex:tab>
+      <apex:tab label="Open Activities" name="OpenActivities" id="tabOpenAct">
+         <apex:relatedList subject="{!account}" list="OpenActivities" />
+      </apex:tab>
+      <apex:tab label="Notes and Attachments" name="NotesAndAttachments" id="tabNoteAtt">
+         <apex:relatedList subject="{!account}" list="NotesAndAttachments" />
+      </apex:tab>
+    </apex:tabPanel>
+    <div style="color:black; background-color: white; width: 100%; height: 100px; text-align: center">
+    <h1>Gay Lord!!!!!!</h1><br/>
+    <apex:image value="/servlet/servlet.FileDownload?file=01570000000gVtt"/>
+    </div>   
+</apex:page>

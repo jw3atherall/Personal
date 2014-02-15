@@ -1,0 +1,23 @@
+<apex:page controller="catalogController" id="thePage" standardStylesheets="false" showHeader="true" sidebar="true">
+    <style>
+      .activeTab {background-color: #236FBD; color:white; 
+         background-image:none}
+      .inactiveTab { background-color: lightgrey; color:black; 
+         background-image:none}
+    </style>
+    <apex:stylesheet value="{!$Resource.productcatalogstyle}"/>
+    <apex:tabPanel switchType="client" selectedTab="tabdetails" 
+                  id="AccountTabPanel" tabClass="activeTab" 
+                  inactiveTabClass="inactiveTab">   
+        <apex:tab label="Details" name="AccDetails" id="tabdetails">
+        <apex:dataTable value="{!widgets}" var="widget" id="theTable" rowClasses="odd,even" styleClass="gradient-style">
+            <apex:column >
+                <apex:outputText value="{!widget.name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:outputText value="Test"/>
+            </apex:column>
+        </apex:dataTable>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>
